@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bfsdfs/bfsdfs.iml" filepath="$PROJECT_DIR$/bfsdfs/bfsdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bsearch/bsearch.iml" filepath="$PROJECT_DIR$/bsearch/bsearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dynamic/dynamic.iml" filepath="$PROJECT_DIR$/dynamic/dynamic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hashmap/hashmap.iml" filepath="$PROJECT_DIR$/hashmap/hashmap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/juniorcode.iml" filepath="$PROJECT_DIR$/juniorcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/list/list.iml" filepath="$PROJECT_DIR$/list/list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlineassessment/onlineassessment.iml" filepath="$PROJECT_DIR$/onlineassessment/onlineassessment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/priorityqueue/priorityqueue.iml" filepath="$PROJECT_DIR$/priorityqueue/priorityqueue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stack/stack.iml" filepath="$PROJECT_DIR$/stack/stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread/thread.iml" filepath="$PROJECT_DIR$/thread/thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tree/tree.iml" filepath="$PROJECT_DIR$/tree/tree.iml" />
+    </modules>
+  </component>
+</project>
