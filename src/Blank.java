@@ -1,6 +1,5 @@
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+
 
 /**
  * @Description:ine
@@ -9,9 +8,7 @@ import java.util.concurrent.Executors;
  */
 public class Blank {
     public static void main(String[] args) {
-        String a = "w.c.w.s";
-        System.out.println("\\.");
-        System.out.println(a.split("\\."));
+       int a = Integer.MAX_VALUE;
     }
     public int subarraySum(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();

@@ -7,6 +7,7 @@ import java.util.Set;
  * @date:3/17/21 3:47 PM
  */
 public class Leetcode3 {
+
     public int lengthOfLongestSubstring(String s) {
         int res = 0;
         Set<Character> set = new HashSet<>();
