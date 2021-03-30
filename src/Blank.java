@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.*;
@@ -11,19 +12,11 @@ import java.util.*;
  */
 public class Blank {
     public static void main(String[] args) {
-        Map<String,String> map = new HashMap<>();
-        map.put("3","7");
-        map.put("2","5");
-        map.put("1","6");
-        List<Map.Entry<String,String>> list = new ArrayList<>(map.entrySet());
-        list.sort(Comparator.comparing(Map.Entry::getValue));
-        Map<String,String> map2 = new LinkedHashMap<>();
-        for(Map.Entry<String,String> entry: list){
-            map2.put(entry.getKey(), entry.getValue());
-        }
-        System.out.println(map2.entrySet().iterator().next());
-        map2.forEach((o1, o2)-> System.out.println(o1+":"+o2));
-
+        int[] num = new int[3];
+        int[] tmp = num;
+        tmp[2] = 100;
+        System.out.println(num[2]);
+       
 
 
 
