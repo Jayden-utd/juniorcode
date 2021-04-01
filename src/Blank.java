@@ -3,6 +3,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 
 /**
@@ -15,11 +17,6 @@ public class Blank {
         int[] num = new int[3];
         int[] tmp = num;
         tmp[2] = 100;
-        System.out.println(num[2]);
-       
-
-
-
     }
 
     public int subarraySum(int[] nums, int k) {

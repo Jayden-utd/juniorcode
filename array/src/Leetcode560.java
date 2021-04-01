@@ -4,12 +4,9 @@ import java.util.Map;
 /**
  * @Description:
  * @author: Jayden
- * @date:3/17/21 2:04 PM
+ * @date:3/31/21 11:21 PM
  */
 public class Leetcode560 {
-    //can use prefix sum
-    //cannot use sliding window
-    //
     public int subarraySum(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
