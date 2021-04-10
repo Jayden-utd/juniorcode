@@ -9,6 +9,9 @@ public class Leetcode1465 {
     public static void main(String[] args) {
         System.out.println(maxArea(5, 4, new int[]{1, 2, 4}, new int[]{1, 3}));
     }
+    //we need to find the max value of height and length
+    //so we can compare every interval if we sort the cuts before
+    //multiply those two max value and take mod 10e7
     public static int maxArea(int h, int w, int[] horizontalCuts, int[] verticalCuts) {
         Arrays.sort(horizontalCuts);
         Arrays.sort(verticalCuts);

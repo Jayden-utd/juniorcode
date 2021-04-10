@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -14,22 +15,56 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class Blank {
     public static void main(String[] args) {
-        int[] num = new int[3];
-        int[] tmp = num;
-        tmp[2] = 100;
+        System.out.println((13 ^ 8));
     }
 
-    public int subarraySum(int[] nums, int k) {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(0, 1);
-        int res = 0, sum = 0, n = nums.length;
-        for (int i = 0; i < n; i++) {
-            sum += nums[i];
-            if (map.containsKey(sum - k)) res += map.get(sum - k);
-            map.put(sum, map.getOrDefault(sum, 0) + 1);
+    public static int nPrime(int n) {
+        int num = 1, count = 0, i;
+        while (count < n) {
+            num = num + 1;
+            for (i = 2; i <= num; i++) {
+                //determines the modulo and compare it with 0
+                if (num % i == 0) {
+                    //breaks the loop if the above condition returns true
+                    break;
+                }
+            }
+            if (i == num) {
+                //increments the count variable by 1 if the number is prime
+                count = count + 1;
+            }
+        }
+        return num;
+    }
+
+    public static int maxValue(int[] arr) {
+        int res = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            //if bigger then update
+            if (arr[i] + arr[i + 1] > res) {
+                res = arr[i] + arr[i + 1];
+            }
         }
         return res;
     }
+
+
+    public int[] findingUsersActiveMinutes(int[][] logs, int k) {
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int[] log : logs) {
+            map.putIfAbsent(log[0], new ArrayList<>());
+            if (!map.get(log[0]).contains(log[1])) {
+                map.get(log[0]).add(log[1]);
+            }
+        }
+        int[] res = new int[k];
+
+        for (Map.Entry<Integer, List<Integer>> tmp : map.entrySet()) {
+            res[tmp.getValue().size() - 1]++;
+        }
+        return res;
+    }
+
 
     private static List<Integer> getPrimeNumberToN(int n) {
         List<Integer> result = new ArrayList<>();

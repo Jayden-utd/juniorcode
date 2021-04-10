@@ -6,6 +6,35 @@ package calculator;
  * @date:3/1/21 4:59 PM
  */
 public class Leetcode227 {
+    public static void main(String[] args) {
+        calculatess("1+3*7");
+    }
+    public static int calculatess(String s) {
+        if (s == null || s.isEmpty()) return 0;
+        int length = s.length();
+        int currentNumber = 0, lastNumber = 0, result = 0;
+        char operation = '+';
+        for (int i = 0; i < length; i++) {
+            char currentChar = s.charAt(i);
+            if (Character.isDigit(currentChar)) {
+                currentNumber = (currentNumber * 10) + (currentChar - '0');
+            }
+            if (!Character.isDigit(currentChar) && !Character.isWhitespace(currentChar) || i == length - 1) {
+                if (operation == '+' || operation == '-') {
+                    result += lastNumber;
+                    lastNumber = (operation == '+') ? currentNumber : -currentNumber;
+                } else if (operation == '*') {
+                    lastNumber = lastNumber * currentNumber;
+                } else if (operation == '/') {
+                    lastNumber = lastNumber / currentNumber;
+                }
+                operation = currentChar;
+                currentNumber = 0;
+            }
+        }
+        result += lastNumber;
+        return result;
+    }
     public int calculate(String s) {
         int n = s.length(), res = 0, num = 0, curRes = 0;
         char op = '+';
