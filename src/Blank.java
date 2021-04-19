@@ -1,11 +1,4 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.text.DecimalFormat;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 
 /**
@@ -15,8 +8,13 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class Blank {
     public static void main(String[] args) {
-        System.out.println((13 ^ 8));
+        Map<String, Integer[]> map = new HashMap<>();
+
     }
+
+
+
+
 
     public static int nPrime(int n) {
         int num = 1, count = 0, i;

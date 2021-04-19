@@ -57,4 +57,5 @@ public class Leetcode23 {
         }
         return dummy.next;
     }
+
 }

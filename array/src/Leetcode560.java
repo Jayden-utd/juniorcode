@@ -7,6 +7,9 @@ import java.util.Map;
  * @date:3/31/21 11:21 PM
  */
 public class Leetcode560 {
+    public static void main(String[] args) {
+        System.out.println(subarraySumSout(new int[]{15, 2, 4, 8, 9, 5, 10, 23}, 23));
+    }
     public int subarraySum(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
@@ -17,5 +20,28 @@ public class Leetcode560 {
             map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
         return res;
+    }
+
+    public static int subarraySumSout(int[] nums, int k) {
+        int curSum = 0, start = 0;
+        for (int i = 0; i < nums.length; i++) {
+            curSum += nums[i];
+            if (curSum == k) {
+                System.out.println(start + " " + i);
+                break;
+            } else if (curSum > k) {
+                while (curSum > k && start < i) {
+                    curSum = curSum - nums[start];
+                    start++;
+                }
+                if (curSum == k) {
+                    System.out.println(start + " " + i);
+                    break;
+                }
+            }
+        }
+        System.out.println("No subarray found");
+        return 0;
+
     }
 }

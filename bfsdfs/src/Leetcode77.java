@@ -17,7 +17,7 @@ public class Leetcode77 {
             res.add(new ArrayList<>(list));
             return;
         }
-        ////剪枝 减少不必要的操作 n - i + list.size >= k
+        ////剪枝 减少不必要的操作 n - i + 1 + list.size >= k
         for (int i = start; i <= n; i++) {
             list.add(i);
             dfs(n, k, i + 1, list, res);
