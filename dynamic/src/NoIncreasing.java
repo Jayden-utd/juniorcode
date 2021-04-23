@@ -42,7 +42,7 @@ public class NoIncreasing {
                 // ending with element arr[i]
                 dp[l][i] = 0;
                 for (int j = l - 1; j < i; j++) {
-                    if (arr[j] < arr[i]) {
+                    if (arr[j] > arr[i]) {
                         dp[l][i] += dp[l - 1][j];
                     }
                 }

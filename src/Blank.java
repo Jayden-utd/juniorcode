@@ -8,13 +8,15 @@ import java.util.*;
  */
 public class Blank {
     public static void main(String[] args) {
-        Map<String, Integer[]> map = new HashMap<>();
+        int[] s1 = new int[]{1,2};
+        int[] s2 = new int[]{1,2};
+        System.out.println(Arrays.equals(s1,s2));
+        LinkedList<Integer> list = new LinkedList<>();
+        ArrayList<Integer> l2 = new ArrayList<>();
+        l2.add(0, 1);
+        l2.add(l2.size(), 2);
 
     }
-
-
-
-
 
     public static int nPrime(int n) {
         int num = 1, count = 0, i;

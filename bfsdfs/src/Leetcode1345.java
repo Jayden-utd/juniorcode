@@ -8,6 +8,10 @@ import java.util.*;
 
 //bfs 经典
 public class Leetcode1345 {
+    public static void main(String[] args) {
+        Leetcode1345 test = new Leetcode1345();
+        System.out.println(test.minJumps(new int[]{100,-23,-23,404,100,23,23,23,3,404}));
+    }
     public int minJumps(int[] arr) {
         int n = arr.length;
         HashMap<Integer, List<Integer>> indicesOfValue = new HashMap<>();

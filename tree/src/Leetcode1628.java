@@ -22,43 +22,45 @@ public class Leetcode1628 {
         }
         return stack.pop();
     }
+    abstract class Node {
+        public abstract int evaluate();
+        // define your fields here
+    }
+
+    class TNode extends Node {
+        String val;
+        TNode left;
+        TNode right;
+        TNode(String val) {
+            this.val = val;
+        }
+        @Override
+        public int evaluate() {
+            return dfs(this);
+        }
+        private int dfs(TNode root) {
+            if (root.left == null && root.right == null) {
+                return Integer.valueOf(root.val);
+            }
+            int left = dfs(root.left);
+            int right = dfs(root.right);
+            String operator = root.val;
+            int res = 0;
+            if ("+".equals(operator)) {
+                res = left + right;
+            } else if ("-".equals(operator)) {
+                res = left - right;
+            } else if ("*".equals(operator)) {
+                res = left * right;
+            } else {
+                res = left / right;
+            }
+            return res;
+        }
 }
 
 
-abstract class Node {
-    public abstract int evaluate();
-    // define your fields here
-}
 
-class TNode extends Node {
-    String val;
-    TNode left;
-    TNode right;
-    TNode(String val) {
-        this.val = val;
-    }
-    @Override
-    public int evaluate() {
-        return dfs(this);
-    }
-    private int dfs(TNode root) {
-        if (root.left == null && root.right == null) {
-            return Integer.valueOf(root.val);
-        }
-        int left = dfs(root.left);
-        int right = dfs(root.right);
-        String operator = root.val;
-        int res = 0;
-        if ("+".equals(operator)) {
-            res = left + right;
-        } else if ("-".equals(operator)) {
-            res = left - right;
-        } else if ("*".equals(operator)) {
-            res = left * right;
-        } else {
-            res = left / right;
-        }
-        return res;
-    }
+
 }
 
