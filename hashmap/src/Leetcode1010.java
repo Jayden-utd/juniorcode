@@ -11,10 +11,6 @@ import java.util.Set;
 
 //x % 60 = 60 - t % 60
 //but one case cannot satisty
-
-
-
-
 public class Leetcode1010 {
     //2 sum
     public int numPairsDivisibleBy60(int[] time) {
