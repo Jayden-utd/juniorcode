@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/design/design.iml" filepath="$PROJECT_DIR$/design/design.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamic/dynamic.iml" filepath="$PROJECT_DIR$/dynamic/dynamic.iml" />
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greedy/greedy.iml" filepath="$PROJECT_DIR$/greedy/greedy.iml" />
       <module fileurl="file://$PROJECT_DIR$/hashmap/hashmap.iml" filepath="$PROJECT_DIR$/hashmap/hashmap.iml" />
       <module fileurl="file://$PROJECT_DIR$/juniorcode.iml" filepath="$PROJECT_DIR$/juniorcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/list/list.iml" filepath="$PROJECT_DIR$/list/list.iml" />

@@ -34,6 +34,7 @@ public class FuckList {
 //        }
 
     }
+
     //reverse 206
     public ListNode reverseList(ListNode head) {
         ListNode prev = null, cur = head;

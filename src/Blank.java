@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 /**
  * @Description:ine
  * @author: Jayden
@@ -8,11 +7,11 @@ import java.util.*;
  */
 public class Blank {
     public static void main(String[] args) {
-        String s= "123456";
-        Set<Integer> set = new HashSet<>();
-        set.add(1);
-
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        System.out.println(Integer.MAX_VALUE);
     }
+
+
 
     public static int nPrime(int n) {
         int num = 1, count = 0, i;

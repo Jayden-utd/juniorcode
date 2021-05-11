@@ -8,6 +8,27 @@ import java.util.PriorityQueue;
  * @date:3/10/21 11:20 AM
  */
 public class Leetcode23 {
+    public ListNode mergeKListsOneByOne(ListNode[] lists) {
+        ListNode res=null;
+        for (ListNode list:lists){
+            res=mergeKList(res,list);
+        }
+        return res;
+    }
+    public ListNode mergeKList(ListNode l1,ListNode l2){
+        if (l1==null) return l2;
+        if (l2==null) return l1;
+        if (l1.val<l2.val){
+            l1.next=mergeKList(l1.next,l2);
+            return l1;
+        }else {
+            l2.next=mergeKList(l1,l2.next);
+            return l2;
+        }
+    }
+
+
+
 //    public ListNode mergeKLists(ListNode[] lists) {
 //        return dc(lists, 0, lists.length - 1);
 //    }
