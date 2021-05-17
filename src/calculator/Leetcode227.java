@@ -7,7 +7,8 @@ package calculator;
  */
 public class Leetcode227 {
     public static void main(String[] args) {
-        calculatess("1+3*7");
+        System.out.println(calculate("1+3*7"));
+
     }
     public static int calculatess(String s) {
         if (s == null || s.isEmpty()) return 0;
@@ -35,8 +36,37 @@ public class Leetcode227 {
         result += lastNumber;
         return result;
     }
-    public int calculate(String s) {
-        int n = s.length(), res = 0, num = 0, curRes = 0;
+//    public int calculate(String s) {
+//        int n = s.length(), res = 0, num = 0, curRes = 0;
+//        char op = '+';
+//        for (int i = 0; i < n; i++) {
+//            char c = s.charAt(i);
+//            if (Character.isDigit(c)) {
+//                num = num * 10 + c - '0';
+//            }
+//            if (c == '+' || c == '-' || c == '*' || c == '/' || i == n - 1) {
+//                switch (op) {
+//                    case '+': curRes += num; break;
+//                    case '-': curRes -= num; break;
+//                    case '*': curRes *= num; break;
+//                    case '/': curRes /= num; break;
+//                    default: break;
+//                }
+//                if (c == '+' || c == '-' || i == n - 1) {
+//                    res += curRes;
+//                    curRes = 0;
+//                }
+//                op = c;
+//                num = 0;
+//            }
+//        }
+//        return res;
+//    }
+
+
+
+    public static int calculate(String s) {
+        int n = s.length(), res = 0, num = 0;
         char op = '+';
         for (int i = 0; i < n; i++) {
             char c = s.charAt(i);
@@ -45,15 +75,11 @@ public class Leetcode227 {
             }
             if (c == '+' || c == '-' || c == '*' || c == '/' || i == n - 1) {
                 switch (op) {
-                    case '+': curRes += num; break;
-                    case '-': curRes -= num; break;
-                    case '*': curRes *= num; break;
-                    case '/': curRes /= num; break;
+                    case '+': res += num; break;
+                    case '-': res -= num; break;
+                    case '*': res *= num; break;
+                    case '/': res /= num; break;
                     default: break;
-                }
-                if (c == '+' || c == '-' || i == n - 1) {
-                    res += curRes;
-                    curRes = 0;
                 }
                 op = c;
                 num = 0;

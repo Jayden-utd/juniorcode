@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/bfsdfs/bfsdfs.iml" filepath="$PROJECT_DIR$/bfsdfs/bfsdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/bsearch/bsearch.iml" filepath="$PROJECT_DIR$/bsearch/bsearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/design/design.iml" filepath="$PROJECT_DIR$/design/design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/divideconquer/divideconquer.iml" filepath="$PROJECT_DIR$/divideconquer/divideconquer.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamic/dynamic.iml" filepath="$PROJECT_DIR$/dynamic/dynamic.iml" />
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
       <module fileurl="file://$PROJECT_DIR$/greedy/greedy.iml" filepath="$PROJECT_DIR$/greedy/greedy.iml" />
@@ -14,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/list/list.iml" filepath="$PROJECT_DIR$/list/list.iml" />
       <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" />
       <module fileurl="file://$PROJECT_DIR$/onlineassessment/onlineassessment.iml" filepath="$PROJECT_DIR$/onlineassessment/onlineassessment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ood/ood.iml" filepath="$PROJECT_DIR$/ood/ood.iml" />
       <module fileurl="file://$PROJECT_DIR$/priorityqueue/priorityqueue.iml" filepath="$PROJECT_DIR$/priorityqueue/priorityqueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/stack/stack.iml" filepath="$PROJECT_DIR$/stack/stack.iml" />
       <module fileurl="file://$PROJECT_DIR$/thread/thread.iml" filepath="$PROJECT_DIR$/thread/thread.iml" />

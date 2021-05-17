@@ -18,4 +18,24 @@ public class Leetcode121 {
         }
         return dp[n - 1][0];
     }
+
+
+    public static int[] maxProfitPrint(int[] prices) {
+        int[] res = new int[3];
+        int buy = Integer.MAX_VALUE;
+        int profit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            int price = prices[i];
+            if (price < buy) {
+                buy = price;
+                res[0] = i;
+            }
+            if (price - buy > profit) {
+                res[1] = i;
+                res[2] = price - buy;
+                profit = price - buy;
+            }
+        }
+        return res;
+    }
 }

@@ -15,36 +15,36 @@ public class CloudFront {
         System.out.println(test.costEvaluation(10, connections));
     }
 
-    public int costEvaluationDfs(int n, int[][] connections) {
-        int[][] M = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            M[i][i] = 1;
-        }
-        for (int[] conn : connections) {
-            int x = conn[0], y = conn[1];
-            M[x][y] = 1;
-            M[y][x] = 1;
-        }
-        int[] visited = new int[M.length];
-
-        int cost = 0;
-        for (int i = 0; i < M.length; i++) {
-            if (visited[i] == 0) {
-                int numberWare = dfs(M, visited, i);
-                cost += Math.ceil(Math.sqrt(numberWare));
-            }
-        }
-        return cost;
-    }
-    public int dfs(int[][] M, int[] visited, int i) {
-        for (int j = 0; j < M.length; j++) {
-            if (M[i][j] == 1 && visited[j] == 0) {
-                visited[j] = 1;
-                return 1 + dfs(M, visited, j);
-            }
-        }
-        return 0;
-    }
+//    public int costEvaluationDfs(int n, int[][] connections) {
+//        int[][] M = new int[n][n];
+//        for (int i = 0; i < n; i++) {
+//            M[i][i] = 1;
+//        }
+//        for (int[] conn : connections) {
+//            int x = conn[0], y = conn[1];
+//            M[x][y] = 1;
+//            M[y][x] = 1;
+//        }
+//        int[] visited = new int[M.length];
+//
+//        int cost = 0;
+//        for (int i = 0; i < M.length; i++) {
+//            if (visited[i] == 0) {
+//                int numberWare = dfs(M, visited, i);
+//                cost += Math.ceil(Math.sqrt(numberWare));
+//            }
+//        }
+//        return cost;
+//    }
+//    public int dfs(int[][] M, int[] visited, int i) {
+//        for (int j = 0; j < M.length; j++) {
+//            if (M[i][j] == 1 && visited[j] == 0) {
+//                visited[j] = 1;
+//                return 1 + dfs(M, visited, j);
+//            }
+//        }
+//        return 0;
+//    }
 
 
 
@@ -84,6 +84,7 @@ public class CloudFront {
 //                    parent[i] = rootQ;
 //                }
 //            }
+            //正常是 小树接大树下 这个就直接 反过来了，因为为了 算主树干 底下有多少个节点
             if (rank[rootP] > rank[rootQ]) {
                 parent[rootP] = rootQ;
                 rank[rootQ] += rank[rootP];

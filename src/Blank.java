@@ -7,11 +7,81 @@ import java.util.*;
  */
 public class Blank {
     public static void main(String[] args) {
+        Deque<String> stack = new ArrayDeque<>();
         TreeMap<Integer, Integer> map = new TreeMap<>();
-        System.out.println(Integer.MAX_VALUE);
+        TreeSet<Integer> set = new TreeSet<>();
+        set.lower(1);
+        set.higher(1);
+        set.floor(1);
+        map.ceilingKey(1);
+        map.floorKey(1);
+//
+//        int[] arr = new int[]{1,3,5,2,4,6,8};
+//        int[] res = new int[arr.length - 2];
+//        int[] pre = new int[arr.length + 1];
+//        for (int i = 1; i < pre.length; i++) {
+//            pre[i] = arr[i - 1] + pre[i - 1];
+//        }
+//
+//        for (int i = 0; i < res.length; i++) {
+//            res[i] = pre[i + 3] - pre[i];
+//        }
+//        for (int i : res) System.out.println(i);
+        System.out.println((1 >> 1));
+
+
+
+
+
+
+
+
+    }
+
+    public int subsetXORSum(int[] nums) {
+        int n = nums.length, res = 0, start = 1 << n;
+        for(int i = 0; i < 1 << n; i++){
+            int xor = 0;
+            for(int j = 0; j < nums.length; j++)
+                if(((i >> j) & 1) == 1)
+                    xor ^= nums[j];
+            res += xor;
+        }
+        return res;
     }
 
 
+
+    public static int firstUniqChar(String s) {
+        Map<Character, Integer> count = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            count.put(c, count.getOrDefault(c, 0) + 1);
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (count.get(s.charAt(i)) == 1) return i;
+        }
+        return -1;
+    }
+
+    public static void pairedElements(int arr[], int sum)
+    {
+        int low = 0;
+        int high = arr.length - 1;
+
+        while (low < high) {
+            if (arr[low] + arr[high] == sum) {
+                System.out.println("The pair is : ("
+                        + arr[low] + ", " + arr[high] + ")");
+            }
+            if (arr[low] + arr[high] > sum) {
+                high--;
+            }
+            else {
+                low++;
+            }
+        }
+    }
 
     public static int nPrime(int n) {
         int num = 1, count = 0, i;
