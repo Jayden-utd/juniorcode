@@ -41,12 +41,67 @@ class TypeFilter extends Filter {
     }
 }
 
+class NotFilter extends Filter {
+
+    Filter filter;
+
+    NotFilter(Filter filter) {
+        this.filter = filter;
+    }
+
+    @Override
+    boolean apply(File file) {
+        return !filter.apply(file);
+    }
+}
+
+class OrFilter extends Filter {
+
+    List<Filter> filters;
+
+    OrFilter(List<Filter> filters) {
+        this.filters = filters;
+    }
+
+    @Override
+    boolean apply(File file) {
+        boolean selectFile = false;
+        for (Filter filter : filters) {
+            if (filter.apply(file)) {
+                selectFile = true;
+            }
+        }
+        return selectFile;
+    }
+
+}
+
+class AndFilter extends Filter {
+
+    List<Filter> filters;
+
+    AndFilter(List<Filter> filters) {
+        this.filters = filters;
+    }
+
+    @Override
+    boolean apply(File file) {
+        for (Filter filter : filters) {
+            if (!filter.apply(file)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
 class FindCommand {
 
     public List<File> findWithFilters(File directory, List<Filter> filters) {
-        if (!directory.isDirectory) {
-            return new NotADirectoryException();
-        }
+//        if (!directory.isDirectory) {
+//            return new NotADirectoryException();
+//        }
         List<File> output = new ArrayList<>();
         findWithFilters(directory, filters, output);
         return output;

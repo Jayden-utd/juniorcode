@@ -27,13 +27,7 @@ public class Blank {
 //            res[i] = pre[i + 3] - pre[i];
 //        }
 //        for (int i : res) System.out.println(i);
-        System.out.println((1 >> 1));
-
-
-
-
-
-
+    List<List<Integer>> input = new LinkedList<>();
 
 
     }

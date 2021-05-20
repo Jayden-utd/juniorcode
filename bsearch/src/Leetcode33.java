@@ -4,6 +4,10 @@
  * @date:2/26/21 9:52 AM
  */
 public class Leetcode33 {
+    public static void main(String[] args) {
+        Leetcode33 test = new Leetcode33();
+        System.out.println(test.search(new int[]{1,1,2,1,1}, 1));
+    }
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {
