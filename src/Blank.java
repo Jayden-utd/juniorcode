@@ -15,6 +15,13 @@ public class Blank {
         set.floor(1);
         map.ceilingKey(1);
         map.floorKey(1);
+        StringBuilder sb = new StringBuilder();
+        int k = 9;
+        sb.append(k);
+        System.out.println(sb.toString());
+
+
+
 //
 //        int[] arr = new int[]{1,3,5,2,4,6,8};
 //        int[] res = new int[arr.length - 2];

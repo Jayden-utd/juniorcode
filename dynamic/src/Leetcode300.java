@@ -6,6 +6,10 @@ import java.util.Arrays;
  * @date:4/15/21 9:37 AM
  */
 public class Leetcode300 {
+    public static void main(String[] args) {
+        Leetcode300 test = new Leetcode300();
+        System.out.println(test.lengthOfLIS(new int[]{4,2,4,5,3,7}));
+    }
     public int lengthOfLIS(int[] nums) {
         int[] dp = new int[nums.length];
         Arrays.fill(dp,1);
