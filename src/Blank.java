@@ -7,14 +7,44 @@ import java.util.*;
  */
 public class Blank {
     public static void main(String[] args) {
-        int[] array = new int[]{6,5,4,3,2,1};
-        int[] res = array.clone();
-        Arrays.sort(res);
-        for (int i : array) System.out.println(i);
-
-
+        Blank test = new Blank();
+        System.out.println("hello world");
+        System.out.println(test.reverse("abcdefg"));
+    }
+    //O(n)
+    public String reverse(String s) {
+        int left = 0, right = s.length() - 1;
+        char[] charStr = s.toCharArray();
+        while (left < right) {
+            char tmp = charStr[left];
+            charStr[left] = charStr[right];
+            charStr[right] = tmp;
+            left++;
+            right--;
+        }
+        return new String(charStr);
     }
 
+
+    public String minWindow(String S, String T) {
+        int m = S.length(), n = T.length(), start = -1, minLen = Integer.MAX_VALUE;
+        int[][] dp = new int[m + 1][n + 1];
+        for(int[] k : dp) Arrays.fill(k, -1);
+        for (int i = 0; i <= m; i++) dp[i][0] = i;
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                dp[i][j] = (S.charAt(i - 1) == T.charAt(j - 1) ? dp[i - 1][j - 1] : dp[i - 1][j]);
+            }
+            if (dp[i][n] != -1) {
+                int len = i - dp[i][n];
+                if (minLen > len) {
+                    minLen = len;
+                    start = dp[i][n];
+                }
+            }
+        }
+        return (start != -1) ? S.substring(start, start + minLen) : "";
+    }
     public int subsetXORSum(int[] nums) {
         int n = nums.length, res = 0, start = 1 << n;
         for(int i = 0; i < 1 << n; i++){

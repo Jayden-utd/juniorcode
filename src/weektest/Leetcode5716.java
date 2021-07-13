@@ -10,14 +10,8 @@ import java.util.List;
  */
 public class Leetcode5716 {
     public static void main(String[] args) {
-        System.out.println(numSplits("az"));
+        //System.out.println(numSplits("az"));
     }
-
-
-
-
-
-
 
     public static int[] minDifference(int[] nums, int[][] queries) {
         int max = 0;

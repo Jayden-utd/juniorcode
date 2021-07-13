@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 /**
@@ -6,19 +8,16 @@ import java.util.TreeMap;
  * @date:5/9/21 11:27 AM
  */
 public class Leetcode729 {
-    TreeMap<Integer, Integer> map;
+    List<int[]> calendar;
     public Leetcode729() {
-        map = new TreeMap<>();
+        calendar = new ArrayList<>();
     }
 
     public boolean book(int start, int end) {
-        Integer pre = map.floorKey(start),
-                next = map.ceilingKey(start);
-
-        if ((pre == null || map.get(pre) <= start) && (next == null || end <= next)) {
-            map.put(start, end);
-            return true;
+        for (int[] tmp : calendar) {
+            if (tmp[0] < end && tmp[1] > start) return false;
         }
-        return false;
+        calendar.add(new int[]{start, end});
+        return true;
     }
 }
