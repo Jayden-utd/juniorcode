@@ -11,8 +11,11 @@ import java.util.LinkedList;
  */
 public class Leetcode1776 {
     public static void main(String[] args) {
-        getCollisionTimes(new int[][]{{3,4},{5,9},{6,8},{9,6}});
-        System.out.println(true || false && false);
+        double[] res = getCollisionTimes(new int[][]{{5,4},{8,3},{9,1}});
+        for (double i : res) {
+            System.out.println(i);
+        }
+        System.out.println((true || false) && false);
     }
     public static double[] getCollisionTimes(int[][] cars) {
         int n = cars.length;
@@ -35,8 +38,28 @@ public class Leetcode1776 {
             stack.add(i);
         }
         return res;
-
-
+    }
+    //保持追到的速度 严格递减 从 last index 往前
+    //
+    public double[] getCollisionTimesSecond(int[][] cars) {
+        int n = cars.length;
+        double[] res = new double[n];
+        Deque<Integer> deque = new LinkedList<>();
+        for (int i = n - 1; i >= 0; i--) {
+            res[i] = -1;
+            int p = cars[i][0];
+            int s = cars[i][1];
+            while (!deque.isEmpty() && (s <= cars[deque.peekLast()][1] || 1.0 * (cars[deque.peekLast()][0] - p) / (s - cars[deque.peekLast()][1]) >= res[deque.peekLast()] && res[deque.peekLast()] > 0)) {
+                deque.pollLast();
+            }
+            if (!deque.isEmpty()) {
+                //calculate
+                int j = deque.peekLast(), p2 = cars[j][0], s2 = cars[j][1];
+                res[i] = 1.0 * (p2 - p) / (s - s2);
+            }
+            deque.add(i);
+        }
+        return res;
 
 
     }

@@ -8,23 +8,44 @@ import java.util.*;
 public class Blank {
     public static void main(String[] args) {
         Blank test = new Blank();
-        System.out.println("hello world");
-        System.out.println(test.reverse("abcdefg"));
-    }
-    //O(n)
-    public String reverse(String s) {
-        int left = 0, right = s.length() - 1;
-        char[] charStr = s.toCharArray();
-        while (left < right) {
-            char tmp = charStr[left];
-            charStr[left] = charStr[right];
-            charStr[right] = tmp;
-            left++;
-            right--;
-        }
-        return new String(charStr);
+        String s = "abc";
+
+        System.out.println(s.lastIndexOf("bc"));
+
     }
 
+    public int minDis(int[][] edges, int A, int B) {
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+        for (int[] edge : edges) {
+            if (!adj.containsKey(edge[0])) {
+                adj.put(edge[0], new ArrayList<>());
+                adj.get(edge[0]).add(edge[1]);
+            } else {
+                adj.get(edge[0]).add(edge[1]);
+            }
+        }
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        int step = 0;
+        queue.add(A);
+        visited.add(A);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                int curNode = queue.poll();
+                visited.add(curNode);
+                if (curNode == B) return step;
+                for (int next : adj.get(curNode)) {
+                    if (!visited.contains(next)) {
+                        queue.add(next);
+                    }
+                }
+            }
+            step++;
+        }
+        return -1;
+
+    }
 
     public String minWindow(String S, String T) {
         int m = S.length(), n = T.length(), start = -1, minLen = Integer.MAX_VALUE;

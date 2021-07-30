@@ -32,8 +32,6 @@ public class Interview {
     }
 
 
-
-
     public  int minimumEffortPath(int[][] heights) {
         int left = 0, right = 1000000;
         while (left <= right) {
